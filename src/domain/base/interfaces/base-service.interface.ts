@@ -2,8 +2,7 @@ import { BaseEntity } from "../entities/base";
 
 export const BASE_SERVICE_INTERFACE = Symbol("BASE_SERVICE_INTERFACE");
 export interface IBaseService<T extends BaseEntity> {
-  _adicionar(entidade: Partial<T>): Promise<T>;
-  _atualizar(uuid: string, entidade: Partial<T>): Promise<T>;
+  _salvar(entidade: Partial<T>): Promise<T>;
   _excluir(): Promise<T>;
   _obterPorId(): Promise<T>;
   _obterPorUuid(uuid: string, relations?: Record<string, any>): Promise<T>;
@@ -14,5 +13,5 @@ export interface IBaseService<T extends BaseEntity> {
     order?: Record<string, any>,
     relations?: Record<string, any>
   ): Promise<{ total_itens: number; itens: Array<T> }>;
-  _obterListaSelect(): Promise<Array<T>>;
+  _obterListaSelecao(): Promise<Array<T>>;
 }

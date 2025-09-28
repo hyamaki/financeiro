@@ -1,6 +1,6 @@
-import { BaseEntity } from "../../domain/entities/base";
+import { BaseEntity } from "../entities/base";
 import { IBaseRepository } from "../interfaces/base-repository.interface";
-import { IBaseService } from "./_interfaces/base-service.interface";
+import { IBaseService } from "../interfaces/base-service.interface";
 
 export abstract class BaseService<
   T extends BaseEntity,
@@ -13,12 +13,8 @@ export abstract class BaseService<
     this.repository = repository;
   }
 
-  async _adicionar(entidade: T): Promise<T> {
-    return await this.repository._adicionar(entidade);
-  }
-
-  async _atualizar(uuid: string, entidade: T): Promise<T> {
-    return await this.repository._atualizar(uuid, entidade);
+  async _salvar(entidade: T): Promise<T> {
+    return await this.repository._salvar(entidade);
   }
 
   _excluir(): Promise<T> {
@@ -51,7 +47,7 @@ export abstract class BaseService<
     );
   }
 
-  async _obterListaSelect(): Promise<Array<T>> {
-    return await this.repository._obterListaSelect();
+  async _obterListaSelecao(): Promise<Array<T>> {
+    return await this.repository._obterListaSelecao();
   }
 }

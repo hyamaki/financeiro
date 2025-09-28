@@ -3,14 +3,14 @@ import { BaseEntity } from "./base.entity";
 
 @Entity({ name: "movimentacoes" })
 export class MovimentacaoEntity extends BaseEntity {
-  @Column({ type: "timestamptz" })
+  @Column({ type: "datetime" })
   data_operacao: Date;
 
   @Column({ type: "varchar", length: 255 })
   operacao: string | null;
 
-  @Column({ type: "varchar", length: 255 })
-  nome: string | null;
+  @Column({ type: "varchar", length: 255, nullable: true })
+  nome: string;
 
   @Column({ type: "varchar", length: 255 })
   descricao: string | null;

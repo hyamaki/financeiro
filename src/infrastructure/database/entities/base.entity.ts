@@ -9,13 +9,13 @@ export abstract class BaseEntity {
   @Column({ type: "varchar", length: 255 })
   uuid!: string;
 
-  @Column({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
+  @Column({ type: "datetime", default: () => "CURRENT_TIMESTAMP" })
   data_criacao: Date;
 
-  @Column({ type: "timestamptz", default: () => "CURRENT_TIMESTAMP" })
+  @Column({ type: "datetime", default: () => "CURRENT_TIMESTAMP" })
   data_atualizacao: Date;
 
-  @Column({ type: "timestamptz", nullable: true })
+  @Column({ type: "datetime", nullable: true })
   data_exclusao?: Date;
 
   @BeforeInsert()

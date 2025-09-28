@@ -11,7 +11,6 @@ export const config = {
   authToken: process.env.TURSO_AUTH_TOKEN,
   entities: [join(__dirname, "./entities/*.entity{.ts,.js}")],
   // seeds: [],
-  // entities: ["src/entity/**/*.ts"],
   logging: process.env.DATABASE_LOG === "true" ? true : false,
   synchronize: process.env.DATABASE_SYNCHRONIZE === "true" ? true : false,
   dropSchema: process.env.DATABASE_DROP_SCHEMA === "true" ? true : false,

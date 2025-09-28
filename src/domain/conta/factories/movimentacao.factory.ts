@@ -1,18 +1,17 @@
+import { MovimentacaoEntity } from "../../../infrastructure/database/entities/movimentacao.entity";
 import { Movimentacao } from "../entities/movimentacao";
 
 export class MovimentacaoFactory {
   static create(
     nome: string,
-    tipo: number,
     id?: number,
     uuid?: string,
     data_criacao?: Date,
     data_atualizacao?: Date,
     data_exclusao?: Date
   ): Movimentacao {
-    const categoria = new Categoria(
+    const movimentacao = new Movimentacao(
       nome,
-      tipo,
       id,
       uuid,
       data_criacao,
@@ -20,13 +19,12 @@ export class MovimentacaoFactory {
       data_exclusao
     );
 
-    return categoria;
+    return movimentacao;
   }
 
-  static createFromEntity(entity: CategoriaEntity): Categoria {
-    return new Categoria(
+  static createFromEntity(entity: MovimentacaoEntity): Movimentacao {
+    return new Movimentacao(
       entity.nome,
-      entity.tipo,
       entity.id,
       entity.uuid,
       entity.data_criacao,
@@ -35,12 +33,11 @@ export class MovimentacaoFactory {
     );
   }
 
-  static convertToEntity(categoria: Categoria): CategoriaEntity {
+  static convertToEntity(categoria: Movimentacao): MovimentacaoEntity {
     return {
       id: categoria.id,
       uuid: categoria.uuid,
       nome: categoria.nome,
-      tipo: categoria.tipo,
-    } as CategoriaEntity;
+    } as MovimentacaoEntity;
   }
 }

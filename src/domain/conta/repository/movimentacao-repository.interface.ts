@@ -1,7 +1,7 @@
-import { IBaseRepository } from "./base-repository.interface";
-import { Categoria } from "../entities/movimentacao";
+import { IBaseRepository } from "../../base/interfaces/base-repository.interface";
+import { Movimentacao } from "../entities/movimentacao";
 
-export const CATEGORIA_REPOSITORY_INTERFACE = Symbol(
-  "CATEGORIA_REPOSITORY_INTERFACE"
+export const MOVIMENTACAO_REPOSITORY_INTERFACE = Symbol(
+  "MOVIMENTACAO_REPOSITORY_INTERFACE"
 );
-export interface ICategoriaRepository extends IBaseRepository<Categoria> {}
+export type IMovimentacaoRepository = IBaseRepository<Movimentacao>;
