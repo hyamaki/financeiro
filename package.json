@@ -1,0 +1,43 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\"",
+    "build": "tsc && copyfiles -u 1 src/views/* dist",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migration:create": "npm run typeorm migration:create ./src/infrastructure/database/migrations/$npm_config_name",
+    "migration:run": "npm run typeorm migration:run -- -d ./src/infrastructure/database/datasource.ts",
+    "migration:down": "npm run typeorm migration:revert -- -d ./src/infrastructure/database/datasource.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@google/genai": "^1.21.0",
+    "@libsql/client": "^0.15.15",
+    "body-parser": "^2.2.0",
+    "dotenv": "^17.2.2",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "reflect-metadata": "^0.2.2",
+    "sqlite3": "^5.1.7",
+    "typeorm": "^0.3.27",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.5.2",
+    "copyfiles": "^2.4.1",
+    "cross-env": "^10.0.0",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "typeorm-cli": "^1.0.7",
+    "typeorm-extension": "^3.7.1",
+    "typescript": "^5.9.2"
+  }
+}
