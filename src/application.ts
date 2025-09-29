@@ -1,6 +1,7 @@
 import "reflect-metadata";
 import express, { Express, Request, Response, RequestHandler } from "express";
 import path from "path";
+import { fileURLToPath } from "url";
 // import cors from 'cors';
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
@@ -10,16 +11,16 @@ import { ContaModule } from "./domain/conta/conta.module";
 import webRoutes from "./infrastructure/www/routes/web.route";
 // import { authMiddleware } from './http/merchant/middlewares/auth.middleware';
 
-dotenv.config({ path: ".env" });
-// datasource
-//   .initialize()
-//   .then(() => {
-//     console.log("Data Source has been initialized!");
-//     ContaModule.registerDependencies(datasource);
-//   })
-//   .catch((err: any) => {
-//     console.error("Error during Data Source initialization:", err);
-//   });
+dotenv.config({ path: ".env", quiet: true });
+datasource
+  .initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+    ContaModule.registerDependencies(datasource);
+  })
+  .catch((err: any) => {
+    console.error("Error during Data Source initialization:", err);
+  });
 
 const app: Express = express();
 
@@ -33,9 +34,12 @@ const app: Express = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.json());
 
+const __filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(__filename);
+
 app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "infrastructure/www/views"));
-app.use(express.static(path.join(__dirname, "..", "public")));
+app.set("views", path.join(dirname, "infrastructure/www/views"));
+app.use(express.static(path.join(dirname, "..", "public")));
 
 app.use("/", webRoutes);
 

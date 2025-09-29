@@ -2,8 +2,9 @@
   "name": "webapp",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\"",
+    "dev": "cross-env NODE_ENV=development tsx watch src/server.ts",
     "build": "tsc && copyfiles -u 1 src/infrastructure/www/views/* dist/",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -37,6 +38,7 @@
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "tsconfig-paths": "^4.2.0",
+    "tsx": "^4.20.6",
     "typeorm-cli": "^1.0.7",
     "typeorm-extension": "^3.7.1",
     "typescript": "^5.9.2"

@@ -27,9 +27,7 @@ export class IndexController {
   //     this.iAtualizarCategoriaService = iAtualizarCategoriaService;
   //   }
   async index(req: Request, res: Response) {
-    const teste = process.env.DATABASE_URL;
-    console.log(teste);
-    res.render("index", { teste: teste });
+    res.render("index");
   }
 
   //   async create(req: Request, res: Response) {

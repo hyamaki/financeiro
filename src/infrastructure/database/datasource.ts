@@ -1,15 +1,20 @@
 import { DataSource, DataSourceOptions } from "typeorm";
 import dotenv from "dotenv";
 import { join } from "path";
+import path from "path";
+import { fileURLToPath } from "url";
 
-dotenv.config({ path: ".env" });
+dotenv.config({ path: ".env", quiet: true });
+
+const __filename = fileURLToPath(import.meta.url);
+const dirname = path.dirname(__filename);
 
 export const config = {
   type: process.env.DATABASE_TYPE,
   database: process.env.DATABASE_NAME,
   url: process.env.DATABASE_URL,
   authToken: process.env.TURSO_AUTH_TOKEN,
-  entities: [join(__dirname, "./entities/*.entity{.ts,.js}")],
+  entities: [join(dirname, "./entities/*.entity{.ts,.js}")],
   // seeds: [],
   logging: process.env.DATABASE_LOG === "true" ? true : false,
   synchronize: process.env.DATABASE_SYNCHRONIZE === "true" ? true : false,
