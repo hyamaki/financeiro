@@ -1,24 +1,5 @@
 import { Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
-// import {
-//   AtualizarCategoriaRequestDTO,
-//   CadastrarCategoriaRequestDTO,
-// } from '../../../../application/dtos/categorias/categoria-request.dto';
-// import {
-//   ICadastrarCategoriaService,
-//   CADASTRAR_CATEGORIA_SERVICE_INTERFACE,
-// } from '../../../../application/services/_interfaces/categoria/cadastrar-categoria.interface';
-// import {
-//   IListarCategoriaService,
-//   LISTAR_CATEGORIA_SERVICE_INTERFACE,
-// } from '../../../../application/services/_interfaces/categoria/listar-categoria.interface';
-// import { ListaPaginadaCategoriaResponse } from '../responses/categorias/lista-paginada-categoria.response';
-// import { Equal, FindOperator, Like } from 'typeorm';
-// import { DetalhesCategoriaResponse } from '../responses/categorias/detalhes-categoria.response';
-// import { IObterCategoriaService, OBTER_CATEGORIA_SERVICE_INTERFACE } from '../../../../application/services/_interfaces/categoria/obter-categoria.interface';
-// import { ATUALIZAR_CATEGORIA_SERVICE_INTERFACE, IAtualizarCategoriaService } from '../../../../application/services/_interfaces/categoria/atualizar-categoria.interface';
-// import { IListarSelectCategoriaService, LISTAR_SELECT_CATEGORIA_SERVICE_INTERFACE } from '../../../../application/services/_interfaces/categoria/listar-select-categoria.interface';
-// import { ListaSelectCategoriaResponse } from '../responses/categorias/lista-select-categoria.response';
 
 @injectable()
 export class IndexController {
@@ -46,47 +27,9 @@ export class IndexController {
   //     this.iAtualizarCategoriaService = iAtualizarCategoriaService;
   //   }
   async index(req: Request, res: Response) {
-    //     const pagina =
-    //       typeof req.query.pagina === 'string' ? parseInt(req.query.pagina) : 1;
-    //     const qtdItens =
-    //       typeof req.query.itens === 'string' ? parseInt(req.query.itens) : 10;
-    //     let filtros = {} as { nome: FindOperator<string>, tipo: FindOperator<string> };
-    //     if (req.query.nome !== undefined) {
-    //       filtros.nome = Like(`%${req.query.nome.toString()}%`);
-    //     }
-    //     if (req.query.tipo !== undefined) {
-    //       filtros.tipo = Equal(req.query.tipo.toString());
-    //     }
-    //     try {
-    //       const categorias = await this.iListarCategoriaService.executar(
-    //         pagina,
-    //         qtdItens,
-    //         filtros,
-    //       );
-    //       res.status(200).json({
-    //         data: ListaPaginadaCategoriaResponse.serialize(
-    //           categorias,
-    //           pagina,
-    //           qtdItens,
-    //         ),
-    //       });
-    //     } catch (error: any) {
-    //       // if (error instanceof ApplicationException) {
-    //       //   res.status(400).json(error);
-    //       // } else {
-    //         res.status(500).json({
-    //           name: 'Exception',
-    //           statusCode: 500,
-    //           description: (error as Error).toString(),
-    //         });
-    //       // }
-    //     }
-    const user = {
-      name: "Jane Doe",
-      occupation: "Software Developer",
-      skills: ["JavaScript", "TypeScript", "Node.js", "Express"],
-    };
-    res.render("index", { user });
+    const teste = process.env.DATABASE_URL;
+    console.log(teste);
+    res.render("index", { teste: teste });
   }
 
   //   async create(req: Request, res: Response) {
@@ -175,47 +118,4 @@ export class IndexController {
   //       // }
   //     }
   //   }
-  async teste(req: Request, res: Response) {
-    //     const pagina =
-    //       typeof req.query.pagina === 'string' ? parseInt(req.query.pagina) : 1;
-    //     const qtdItens =
-    //       typeof req.query.itens === 'string' ? parseInt(req.query.itens) : 10;
-    //     let filtros = {} as { nome: FindOperator<string>, tipo: FindOperator<string> };
-    //     if (req.query.nome !== undefined) {
-    //       filtros.nome = Like(`%${req.query.nome.toString()}%`);
-    //     }
-    //     if (req.query.tipo !== undefined) {
-    //       filtros.tipo = Equal(req.query.tipo.toString());
-    //     }
-    //     try {
-    //       const categorias = await this.iListarCategoriaService.executar(
-    //         pagina,
-    //         qtdItens,
-    //         filtros,
-    //       );
-    //       res.status(200).json({
-    //         data: ListaPaginadaCategoriaResponse.serialize(
-    //           categorias,
-    //           pagina,
-    //           qtdItens,
-    //         ),
-    //       });
-    //     } catch (error: any) {
-    //       // if (error instanceof ApplicationException) {
-    //       //   res.status(400).json(error);
-    //       // } else {
-    //         res.status(500).json({
-    //           name: 'Exception',
-    //           statusCode: 500,
-    //           description: (error as Error).toString(),
-    //         });
-    //       // }
-    //     }
-    const user = {
-      name: "Jane Doe",
-      occupation: "Software Developer",
-      skills: ["JavaScript", "TypeScript", "Node.js", "Express"],
-    };
-    res.render("teste", { user });
-  }
 }

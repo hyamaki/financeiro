@@ -9,7 +9,6 @@ const controller = (): IndexController => {
 const router = express.Router();
 
 router.get("/", (req, res) => controller().index(req, res));
-router.get("/teste", (req, res) => controller().teste(req, res));
 // router.post("/", (req, res) => controller().create(req, res));
 // router.get("/list", (req, res) => controller().list(req, res));
 // router.get("/:uuid", (req, res) => controller().detalhes(req, res));

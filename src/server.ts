@@ -3,7 +3,7 @@ import app from "./application";
 const PORT = process.env.PORT || 4000;
 
 export const server = app.listen(PORT, () => {
-  console.log(`server running at ${PORT}`);
+  console.log(`Server is running at port: ${PORT}`);
 });
 
 export default app;
