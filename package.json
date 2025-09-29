@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon --watch \"src/**\" --ext \"ts,json\" --exec \"ts-node ./src/server.ts\"",
-    "build": "tsc && copyfiles -u 1 src/views/* dist",
+    "build": "tsc && copyfiles -u 1 src/infrastructure/www/views/* dist/",
     "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "typeorm": "typeorm-ts-node-commonjs",
