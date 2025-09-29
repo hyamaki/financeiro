@@ -11,15 +11,15 @@ import webRoutes from "./infrastructure/www/routes/web.route";
 // import { authMiddleware } from './http/merchant/middlewares/auth.middleware';
 
 dotenv.config({ path: ".env" });
-datasource
-  .initialize()
-  .then(() => {
-    console.log("Data Source has been initialized!");
-    ContaModule.registerDependencies(datasource);
-  })
-  .catch((err: any) => {
-    console.error("Error during Data Source initialization:", err);
-  });
+// datasource
+//   .initialize()
+//   .then(() => {
+//     console.log("Data Source has been initialized!");
+//     ContaModule.registerDependencies(datasource);
+//   })
+//   .catch((err: any) => {
+//     console.error("Error during Data Source initialization:", err);
+//   });
 
 const app: Express = express();
 
