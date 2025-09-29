@@ -1,5 +1,5 @@
-import { IBaseService } from "../../base/interfaces/base-service.interface";
-import { Movimentacao } from "../entities/movimentacao";
+import { IBaseService } from "../../base/interfaces/base-service.interface.js";
+import { Movimentacao } from "../entities/movimentacao.js";
 
 export const MOVIMENTACAO_SERVICE_INTERFACE = Symbol(
   "MOVIMENTACAO_SERVICE_INTERFACE"

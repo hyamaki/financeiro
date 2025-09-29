@@ -1,4 +1,4 @@
-import { BaseEntity } from "../../base/entities/base";
+import { BaseEntity } from "../../base/entities/base.js";
 
 export class Movimentacao extends BaseEntity {
   nome?: string;

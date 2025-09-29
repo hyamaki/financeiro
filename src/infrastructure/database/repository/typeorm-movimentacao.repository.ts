@@ -1,10 +1,10 @@
 import { inject, injectable } from "tsyringe";
 import { Repository } from "typeorm";
-import { TypeOrmBaseRepository } from "./typeorm-base.repository";
-import { IMovimentacaoRepository } from "../../../domain/conta/repository/movimentacao-repository.interface";
-import { Movimentacao } from "../../../domain/conta/entities/movimentacao";
-import { MovimentacaoEntity } from "../entities/movimentacao.entity";
-import { MovimentacaoFactory } from "../../../domain/conta/factories/movimentacao.factory";
+import { TypeOrmBaseRepository } from "./typeorm-base.repository.js";
+import { IMovimentacaoRepository } from "../../../domain/conta/repository/movimentacao-repository.interface.js";
+import { Movimentacao } from "../../../domain/conta/entities/movimentacao.js";
+import { MovimentacaoEntity } from "../entities/movimentacao.entity.js";
+import { MovimentacaoFactory } from "../../../domain/conta/factories/movimentacao.factory.js";
 
 export const TYPEORM_MOVIMENTACAO_REPOSITORY_INTERFACE = Symbol(
   "TYPEORM_MOVIMENTACAO_REPOSITORY_INTERFACE"

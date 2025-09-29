@@ -21,7 +21,7 @@ export const config = {
   dropSchema: process.env.DATABASE_DROP_SCHEMA === "true" ? true : false,
   migrationsTableName: "typeorm_migrations",
   migrationsRun: false,
-  migrations: ["./src/infrastructure/database/migrations/**/*.ts"],
+  migrations: [join(dirname, "./migrations/*.js")],
   subscribers: [],
 };
 

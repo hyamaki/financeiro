@@ -6,9 +6,9 @@ import { fileURLToPath } from "url";
 import bodyParser from "body-parser";
 import dotenv from "dotenv";
 
-import datasource from "./infrastructure/database/datasource";
-import { ContaModule } from "./domain/conta/conta.module";
-import webRoutes from "./infrastructure/www/routes/web.route";
+import datasource from "./infrastructure/database/datasource.js";
+import { ContaModule } from "./domain/conta/conta.module.js";
+import webRoutes from "./infrastructure/www/routes/web.route.js";
 // import { authMiddleware } from './http/merchant/middlewares/auth.middleware';
 
 dotenv.config({ path: ".env", quiet: true });

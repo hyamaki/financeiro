@@ -1,5 +1,5 @@
-import { MovimentacaoEntity } from "../../../infrastructure/database/entities/movimentacao.entity";
-import { Movimentacao } from "../entities/movimentacao";
+import { MovimentacaoEntity } from "../../../infrastructure/database/entities/movimentacao.entity.js";
+import { Movimentacao } from "../entities/movimentacao.js";
 
 export class MovimentacaoFactory {
   static create(
@@ -24,20 +24,20 @@ export class MovimentacaoFactory {
 
   static createFromEntity(entity: MovimentacaoEntity): Movimentacao {
     return new Movimentacao(
-      entity.nome,
-      entity.id,
-      entity.uuid,
-      entity.data_criacao,
-      entity.data_atualizacao,
-      entity.data_exclusao
+      entity.nome
+      // entity.id,
+      // entity.uuid,
+      // entity.data_criacao,
+      // entity.data_atualizacao,
+      // entity.data_exclusao
     );
   }
 
   static convertToEntity(categoria: Movimentacao): MovimentacaoEntity {
     return {
-      id: categoria.id,
-      uuid: categoria.uuid,
-      nome: categoria.nome,
+      // id: categoria.id,
+      // uuid: categoria.uuid,
+      // nome: categoria.nome,
     } as MovimentacaoEntity;
   }
 }

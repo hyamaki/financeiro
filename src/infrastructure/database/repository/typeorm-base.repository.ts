@@ -1,7 +1,7 @@
 import { FindOptionsWhere, IsNull, Repository } from "typeorm";
-import { BaseEntity } from "../../../domain/base/entities/base";
-import { BaseEntity as TypeORMBaseEntity } from "../../../infrastructure/database/entities/base.entity";
-import { IBaseRepository } from "../../../domain/base/interfaces/base-repository.interface";
+import { BaseEntity } from "../../../domain/base/entities/base.js";
+import { BaseEntity as TypeORMBaseEntity } from "../../../infrastructure/database/entities/base.entity.js";
+import { IBaseRepository } from "../../../domain/base/interfaces/base-repository.interface.js";
 
 export abstract class TypeOrmBaseRepository<
   TDomain extends BaseEntity,
@@ -34,7 +34,7 @@ export abstract class TypeOrmBaseRepository<
     relations?: Record<string, any>
   ): Promise<TDomain> {
     const entidadeBuscada = await this.ormRepository.findOneOrFail({
-      where: { uuid: uuid } as FindOptionsWhere<T>,
+      // where: { uuid: uuid } as FindOptionsWhere<T>,
       ...relations,
     });
     return this.toDomain(entidadeBuscada);
@@ -51,7 +51,7 @@ export abstract class TypeOrmBaseRepository<
 
     const [itens, total_itens] = await this.ormRepository.findAndCount({
       where: {
-        data_exclusao: IsNull(),
+        // data_exclusao: IsNull(),
         ...filter,
       } as FindOptionsWhere<T>,
       skip,
@@ -71,7 +71,7 @@ export abstract class TypeOrmBaseRepository<
   ): Promise<Array<TDomain>> {
     const itens = await this.ormRepository.find({
       where: {
-        data_exclusao: IsNull(),
+        // data_exclusao: IsNull(),
       } as FindOptionsWhere<T>,
       ...order,
     });
