@@ -175,4 +175,47 @@ export class IndexController {
   //       // }
   //     }
   //   }
+  async teste(req: Request, res: Response) {
+    //     const pagina =
+    //       typeof req.query.pagina === 'string' ? parseInt(req.query.pagina) : 1;
+    //     const qtdItens =
+    //       typeof req.query.itens === 'string' ? parseInt(req.query.itens) : 10;
+    //     let filtros = {} as { nome: FindOperator<string>, tipo: FindOperator<string> };
+    //     if (req.query.nome !== undefined) {
+    //       filtros.nome = Like(`%${req.query.nome.toString()}%`);
+    //     }
+    //     if (req.query.tipo !== undefined) {
+    //       filtros.tipo = Equal(req.query.tipo.toString());
+    //     }
+    //     try {
+    //       const categorias = await this.iListarCategoriaService.executar(
+    //         pagina,
+    //         qtdItens,
+    //         filtros,
+    //       );
+    //       res.status(200).json({
+    //         data: ListaPaginadaCategoriaResponse.serialize(
+    //           categorias,
+    //           pagina,
+    //           qtdItens,
+    //         ),
+    //       });
+    //     } catch (error: any) {
+    //       // if (error instanceof ApplicationException) {
+    //       //   res.status(400).json(error);
+    //       // } else {
+    //         res.status(500).json({
+    //           name: 'Exception',
+    //           statusCode: 500,
+    //           description: (error as Error).toString(),
+    //         });
+    //       // }
+    //     }
+    const user = {
+      name: "Jane Doe",
+      occupation: "Software Developer",
+      skills: ["JavaScript", "TypeScript", "Node.js", "Express"],
+    };
+    res.render("teste", { user });
+  }
 }

@@ -1,60 +1,27 @@
-// {
-//   "compilerOptions": {
-//     "target": "ES6",
-//     "module": "commonjs",
-//     "outDir": "./dist",
-//     "rootDir": "./src",
-//     "strict": true,
-//     "esModuleInterop": true
-//   },
-//   "include": ["src/**/*"]
-// }
 {
   "compilerOptions": {
-    /* Módulos */
-    "target": "es6", // Ou 'ES2018' ou superior, compatível com as versões recentes do Node.js
-    "module": "CommonJS", // Padrão de módulos do Node.js (ou 'ESNext' se usar "type": "module" no package.json)
-    "rootDir": "./src", // Localização dos arquivos TypeScript
-    "outDir": "./dist", // Onde os arquivos JavaScript compilados serão salvos (crucial para o Vercel)
-    "esModuleInterop": true, // Permite importações de CommonJS como se fossem ES Modules
-    "forceConsistentCasingInFileNames": true,
+    "lib": ["es5", "es6"],
     "strictPropertyInitialization": false,
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "outDir": "./dist",
+    "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+    "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+    "strict": true /* Enable all strict type-checking options. */,
+    "skipLibCheck": true /* Skip type checking all .d.ts files. */,
 
-    /* Configurações Adicionais */
-    "strict": true, // Ativa todas as verificações rigorosas de tipo
-    "skipLibCheck": true, // Pula a verificação de tipo dos arquivos de definição de biblioteca
-    "resolveJsonModule": true, // Permite importar arquivos .json
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "typeRoots": ["src/shared/types", "./node_modules/@types"]
+    // "paths": {
+    //   "@/*": ["./src/*"]
+    // }
   },
-  "include": [
-    "src/**/*" // Inclui todos os arquivos TypeScript em src
-  ]
+  "exclude": ["node_modules", "tests"],
+  "include": ["src/**/*"],
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  }
 }
-// {
-//   "compilerOptions": {
-//     "lib": ["es5", "es6"],
-//     "strictPropertyInitialization": false,
-//     "target": "es6",
-//     "module": "commonjs",
-//     "moduleResolution": "node",
-//     "outDir": "./dist",
-//     "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
-//     "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
-//     "strict": true /* Enable all strict type-checking options. */,
-//     "skipLibCheck": true /* Skip type checking all .d.ts files. */,
-
-//     "emitDecoratorMetadata": true,
-//     "experimentalDecorators": true,
-//     "sourceMap": true,
-//     "typeRoots": ["src/shared/types", "./node_modules/@types"]
-//     // "paths": {
-//     //   "@/*": ["./src/*"]
-//     // }
-//   },
-//   "exclude": ["node_modules", "tests"],
-//   "include": ["src/**/*"],
-//   "ts-node": {
-//     "require": ["tsconfig-paths/register"]
-//   }
-// }
