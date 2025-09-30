@@ -1,11 +1,9 @@
-import { BaseEntity } from "../entities/base.js";
+import { Base } from "../entities/base.js";
 import { IBaseRepository } from "../interfaces/base-repository.interface.js";
 import { IBaseService } from "../interfaces/base-service.interface.js";
 
-export abstract class BaseService<
-  T extends BaseEntity,
-  R extends IBaseRepository<T>
-> implements IBaseService<T>
+export abstract class BaseService<T extends Base, R extends IBaseRepository<T>>
+  implements IBaseService<T>
 {
   protected repository: R;
 

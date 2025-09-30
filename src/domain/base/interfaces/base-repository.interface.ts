@@ -1,6 +1,6 @@
-import { BaseEntity } from "../entities/base.js";
+import { Base } from "../entities/base.js";
 
-export interface IBaseRepository<T extends BaseEntity> {
+export interface IBaseRepository<T extends Base> {
   _salvar(entidade: T): Promise<T>;
   _excluir(entidade: T): Promise<T>;
   _obterPorId(id: number): Promise<T>;

@@ -1,4 +1,4 @@
-import { Base } from "../../base/entities/base.js";
+import { Base } from "../../../domain/base/entities/base.js";
 
 export class Movimentacao extends Base {
   data_operacao: Date;

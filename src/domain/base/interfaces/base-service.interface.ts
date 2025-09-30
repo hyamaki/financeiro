@@ -1,7 +1,7 @@
-import { BaseEntity } from "../entities/base.js";
+import { Base } from "../entities/base.js";
 
 export const BASE_SERVICE_INTERFACE = Symbol("BASE_SERVICE_INTERFACE");
-export interface IBaseService<T extends BaseEntity> {
+export interface IBaseService<T extends Base> {
   _salvar(entidade: Partial<T>): Promise<T>;
   _excluir(): Promise<T>;
   _obterPorId(): Promise<T>;

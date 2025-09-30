@@ -4,7 +4,7 @@ import { Movimentacao } from "../entities/movimentacao.js";
 import {
   IMovimentacaoRepository,
   MOVIMENTACAO_REPOSITORY_INTERFACE,
-} from "../repository/movimentacao-repository.interface.js";
+} from "../repositories/movimentacao-repository.interface.js";
 import { IMovimentacaoService } from "../interfaces/movimentacao-service.interface.js";
 
 @injectable()

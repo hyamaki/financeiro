@@ -1,32 +1,26 @@
 import { Request, Response } from "express";
 import { inject, injectable } from "tsyringe";
+import {
+  IListarMovimentacoesService,
+  LISTAR_MOVIMENTACOES_SERVICE_INTERFACE,
+} from "../../../application/conta/interfaces/listar-movimentacoes.interface.js";
 
 @injectable()
 export class IndexController {
-  //   private iCadastrarCategoriaService: ICadastrarCategoriaService;
-  //   private iListarCategoriaService: IListarCategoriaService;
-  //   private iListarSelectCategoriaService: IListarSelectCategoriaService;
-  //   private iObterCategoriaService: IObterCategoriaService;
-  //   private iAtualizarCategoriaService: IAtualizarCategoriaService;
-  //   constructor(
-  //     @inject(CADASTRAR_CATEGORIA_SERVICE_INTERFACE)
-  //     iCadastrarCategoriaService: ICadastrarCategoriaService,
-  //     @inject(LISTAR_CATEGORIA_SERVICE_INTERFACE)
-  //     iListarCategoriaService: IListarCategoriaService,
-  //     @inject(LISTAR_SELECT_CATEGORIA_SERVICE_INTERFACE)
-  //     iListarSelectCategoriaService: IListarSelectCategoriaService,
-  //     @inject(OBTER_CATEGORIA_SERVICE_INTERFACE)
-  //     iObterCategoriaService: IObterCategoriaService,
-  //     @inject(ATUALIZAR_CATEGORIA_SERVICE_INTERFACE)
-  //     iAtualizarCategoriaService: IAtualizarCategoriaService,
-  //   ) {
-  //     this.iCadastrarCategoriaService = iCadastrarCategoriaService;
-  //     this.iListarCategoriaService = iListarCategoriaService;
-  //     this.iListarSelectCategoriaService = iListarSelectCategoriaService;
-  //     this.iObterCategoriaService = iObterCategoriaService;
-  //     this.iAtualizarCategoriaService = iAtualizarCategoriaService;
-  //   }
+  private iListarMovimentacoesService: IListarMovimentacoesService;
+
+  constructor(
+    @inject(LISTAR_MOVIMENTACOES_SERVICE_INTERFACE)
+    iListarMovimentacoesService: IListarMovimentacoesService
+  ) {
+    this.iListarMovimentacoesService = iListarMovimentacoesService;
+  }
+
   async index(req: Request, res: Response) {
+    const movimentacoes = await this.iListarMovimentacoesService.executar(
+      1,
+      10
+    );
     res.render("index");
   }
 

@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
 import { Repository } from "typeorm";
 import { TypeOrmBaseRepository } from "./typeorm-base.repository.js";
-import { IMovimentacaoRepository } from "../../../domain/conta/repository/movimentacao-repository.interface.js";
+import { IMovimentacaoRepository } from "../../../domain/conta/repositories/movimentacao-repository.interface.js";
 import { Movimentacao } from "../../../domain/conta/entities/movimentacao.js";
 import { MovimentacaoEntity } from "../entities/movimentacao.entity.js";
 import { MovimentacaoFactory } from "../../../domain/conta/factories/movimentacao.factory.js";

@@ -1,6 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-export abstract class BaseEntity {
+export abstract class Base {
   id?: number;
   uuid?: string;
   data_criacao?: Date;
@@ -12,7 +12,7 @@ export abstract class BaseEntity {
     uuid?: string,
     data_criacao?: Date,
     data_atualizacao?: Date,
-    data_exclusao?: Date,
+    data_exclusao?: Date
   ) {
     this.id = id;
     this.uuid = uuid || uuidv4();

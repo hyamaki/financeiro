@@ -9,6 +9,7 @@ import dotenv from "dotenv";
 import datasource from "./infrastructure/database/datasource.js";
 import { ContaModule } from "./domain/conta/conta.module.js";
 import webRoutes from "./infrastructure/www/routes/web.route.js";
+import { BaseModule } from "./domain/base/base.module.js";
 // import { authMiddleware } from './http/merchant/middlewares/auth.middleware';
 
 dotenv.config({ path: ".env", quiet: true });
@@ -16,6 +17,7 @@ datasource
   .initialize()
   .then(() => {
     console.log("Data Source has been initialized!");
+    BaseModule.registerDependencies(datasource);
     ContaModule.registerDependencies(datasource);
   })
   .catch((err: any) => {

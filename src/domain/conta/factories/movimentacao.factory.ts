@@ -3,7 +3,11 @@ import { Movimentacao } from "../entities/movimentacao.js";
 
 export class MovimentacaoFactory {
   static create(
+    data_operacao: Date,
+    operacao: string,
     nome: string,
+    descricao: string,
+    valor: number,
     id?: number,
     uuid?: string,
     data_criacao?: Date,
@@ -11,7 +15,11 @@ export class MovimentacaoFactory {
     data_exclusao?: Date
   ): Movimentacao {
     const movimentacao = new Movimentacao(
+      data_operacao,
+      operacao,
       nome,
+      descricao,
+      valor,
       id,
       uuid,
       data_criacao,
@@ -24,20 +32,24 @@ export class MovimentacaoFactory {
 
   static createFromEntity(entity: MovimentacaoEntity): Movimentacao {
     return new Movimentacao(
-      entity.nome
-      // entity.id,
-      // entity.uuid,
-      // entity.data_criacao,
-      // entity.data_atualizacao,
-      // entity.data_exclusao
+      entity.data_operacao,
+      entity.operacao,
+      entity.nome,
+      entity.descricao,
+      entity.valor,
+      entity.id,
+      entity.uuid,
+      entity.data_criacao,
+      entity.data_atualizacao,
+      entity.data_exclusao
     );
   }
 
-  static convertToEntity(categoria: Movimentacao): MovimentacaoEntity {
+  static convertToEntity(movimentacao: Movimentacao): MovimentacaoEntity {
     return {
-      // id: categoria.id,
-      // uuid: categoria.uuid,
-      // nome: categoria.nome,
+      // id: movimentacao.id,
+      // uuid: movimentacao.uuid,
+      // nome: movimentacao.nome,
     } as MovimentacaoEntity;
   }
 }

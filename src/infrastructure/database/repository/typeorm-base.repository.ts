@@ -1,10 +1,10 @@
 import { FindOptionsWhere, IsNull, Repository } from "typeorm";
-import { BaseEntity } from "../../../domain/base/entities/base.js";
+import { Base } from "../../../domain/base/entities/base.js";
 import { BaseEntity as TypeORMBaseEntity } from "../../../infrastructure/database/entities/base.entity.js";
 import { IBaseRepository } from "../../../domain/base/interfaces/base-repository.interface.js";
 
 export abstract class TypeOrmBaseRepository<
-  TDomain extends BaseEntity,
+  TDomain extends Base,
   T extends TypeORMBaseEntity
 > implements IBaseRepository<TDomain>
 {
