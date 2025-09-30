@@ -12,8 +12,8 @@ const dirname = path.dirname(__filename);
 export const config = {
   type: process.env.DATABASE_TYPE,
   database: process.env.DATABASE_NAME,
-  url: process.env.DATABASE_URL,
-  authToken: process.env.TURSO_AUTH_TOKEN,
+  // url: process.env.DATABASE_URL,
+  // authToken: process.env.TURSO_AUTH_TOKEN,
   entities: [join(dirname, "./entities/*.entity{.ts,.js}")],
   // seeds: [],
   logging: process.env.DATABASE_LOG === "true" ? true : false,
