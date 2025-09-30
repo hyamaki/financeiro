@@ -1,4 +1,3 @@
-import "reflect-metadata";
 import express, { Express, Request, Response, RequestHandler } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
