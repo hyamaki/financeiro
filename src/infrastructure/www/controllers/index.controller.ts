@@ -21,7 +21,10 @@ export class IndexController {
       1,
       10
     );
-    res.render("index");
+
+    res.render("index", {
+      movimentacoes: movimentacoes,
+    });
   }
 
   //   async create(req: Request, res: Response) {

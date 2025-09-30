@@ -16,5 +16,16 @@
       />
       <button type="submit">Enviar</button>
     </form>
+
+    <table>
+      <% movimentacoes.itens.forEach(function(item) { %>
+      <tr>
+        <td><%= item.data_operacao %></td>
+        <td><%= item.operacao %></td>
+        <td><%= item.descricao %></td>
+        <td><%= item.valor %></td>
+      </tr>
+      <% }); %>
+    </table>
   </body>
 </html>
