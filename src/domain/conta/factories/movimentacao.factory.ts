@@ -8,6 +8,7 @@ export class MovimentacaoFactory {
     nome: string,
     descricao: string,
     valor: number,
+    categoria?: string,
     id?: number,
     uuid?: string,
     data_criacao?: Date,
@@ -20,6 +21,7 @@ export class MovimentacaoFactory {
       nome,
       descricao,
       valor,
+      categoria,
       id,
       uuid,
       data_criacao,
@@ -37,6 +39,7 @@ export class MovimentacaoFactory {
       entity.nome,
       entity.descricao,
       entity.valor,
+      entity.categoria,
       entity.id,
       entity.uuid,
       entity.data_criacao,
@@ -47,9 +50,14 @@ export class MovimentacaoFactory {
 
   static convertToEntity(movimentacao: Movimentacao): MovimentacaoEntity {
     return {
-      // id: movimentacao.id,
-      // uuid: movimentacao.uuid,
-      // nome: movimentacao.nome,
+      id: movimentacao.id,
+      uuid: movimentacao.uuid,
+      data_operacao: movimentacao.data_operacao,
+      operacao: movimentacao.operacao,
+      nome: movimentacao.nome,
+      descricao: movimentacao.descricao,
+      valor: movimentacao.valor,
+      categoria: movimentacao.categoria,
     } as MovimentacaoEntity;
   }
 }

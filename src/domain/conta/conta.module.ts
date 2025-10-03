@@ -16,7 +16,6 @@ export class ContaModule {
     /**
      * APPLICATION SERVICES
      */
-    // ContaApplication.registerDependencies(dataSource);
     container.register(LISTAR_MOVIMENTACOES_SERVICE_INTERFACE, {
       useClass: ListarMovimentacoesService,
     });

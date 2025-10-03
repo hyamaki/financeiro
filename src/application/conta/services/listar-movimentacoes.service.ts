@@ -25,7 +25,10 @@ export class ListarMovimentacoesService implements IListarMovimentacoesService {
     const movimentacoes = await this.iMovimentacaoService._obterListaPaginada(
       pagina,
       qtdItems,
-      filtros
+      filtros,
+      {
+        order: { id: "DESC" },
+      }
     );
     return movimentacoes;
   }

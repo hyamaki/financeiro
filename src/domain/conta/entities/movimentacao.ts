@@ -6,6 +6,7 @@ export class Movimentacao extends Base {
   nome: string;
   descricao: string;
   valor: number;
+  categoria?: string;
 
   constructor(
     data_operacao: Date,
@@ -13,6 +14,7 @@ export class Movimentacao extends Base {
     nome: string,
     descricao: string,
     valor: number,
+    categoria?: string,
     id?: number,
     uuid?: string,
     data_criacao?: Date,
@@ -25,6 +27,7 @@ export class Movimentacao extends Base {
     this.nome = nome;
     this.descricao = descricao;
     this.valor = valor;
+    this.categoria = categoria;
   }
 
   // tipoValido(tipo: number): boolean {

@@ -10,6 +10,7 @@ import { ContaModule } from "./domain/conta/conta.module.js";
 import webRoutes from "./infrastructure/www/routes/web.route.js";
 import { BaseModule } from "./domain/base/base.module.js";
 import { utils } from "./infrastructure/www/utils/index.js";
+import { MovimentacaoApplication } from "./application/conta/movimentacao/movimentacao.application.js";
 // import { authMiddleware } from './http/merchant/middlewares/auth.middleware';
 
 dotenv.config({ path: ".env", quiet: true });
@@ -18,6 +19,7 @@ datasource
   .then(() => {
     console.log("Data Source has been initialized!");
     BaseModule.registerDependencies(datasource);
+    MovimentacaoApplication.registerDependencies(datasource);
     ContaModule.registerDependencies(datasource);
   })
   .catch((err: any) => {

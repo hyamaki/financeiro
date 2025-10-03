@@ -25,5 +25,5 @@ export class MovimentacaoEntity extends BaseEntity {
   valor: number;
 
   @Column({ type: "varchar", length: 255 })
-  categoria: string | null;
+  categoria: string;
 }

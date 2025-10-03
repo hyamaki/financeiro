@@ -8,8 +8,8 @@ const controller = (): IndexController => {
 
 const router = express.Router();
 
-router.get("/", (req, res) => controller().index(req, res));
-// router.post("/", (req, res) => controller().create(req, res));
+router.get("/", (req, res, next) => controller().index(req, res, next));
+router.post("/", (req, res, next) => controller().create(req, res, next));
 // router.get("/list", (req, res) => controller().list(req, res));
 // router.get("/:uuid", (req, res) => controller().detalhes(req, res));
 // router.put("/:uuid", (req, res) => controller().update(req, res));
