@@ -1,8 +1,6 @@
 {
   "name": "webapp",
   "version": "1.0.0",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=development tsx watch src/server.ts",
     "build": "npm run build:css && tsc && copyfiles -u 1 src/infrastructure/www/views/* dist/",
@@ -11,9 +9,10 @@
     "start": "node dist/server.js",
     "test": "jest",
     "test:watch": "jest --watch",
+    "typeorm": "npx typeorm",
     "migration:create": "npm run typeorm migration:create ./src/infrastructure/database/migrations/$npm_config_name",
-    "migration:run": "ts-node node_modules/typeorm/cli.js migration:run -d ./dist/infrastructure/database/datasource.js",
-    "migration:down": "npm run typeorm migration:revert -- -d ./src/infrastructure/database/datasource.ts"
+    "migration:run": "ts-node node_modules/typeorm/cli.js migration:run -d ./dist/infrastructure/database/datasource.ts",
+    "migration:down": "npm run typeorm migration:revert -- -d ./dist/infrastructure/database/datasource.ts"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +22,12 @@
     "@google/genai": "^1.21.0",
     "@libsql/client": "^0.15.15",
     "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
     "date-fns-tz": "^3.2.0",
     "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
+    "express-openid-connect": "^2.19.2",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "tsyringe": "^4.10.0",
@@ -35,10 +36,15 @@
     "zod": "^4.1.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.4",
+    "@babel/preset-env": "^7.28.3",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/jest": "^30.0.0",
     "@types/node": "^24.5.2",
     "autoprefixer": "^10.4.21",
+    "babel-jest": "^30.2.0",
     "copyfiles": "^2.4.1",
     "cross-env": "^10.0.0",
     "jest": "^30.2.0",

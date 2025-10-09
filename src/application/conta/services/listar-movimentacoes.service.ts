@@ -1,10 +1,10 @@
 import { inject, injectable } from "tsyringe";
-import { IListarMovimentacoesService } from "../interfaces/listar-movimentacoes.interface.js";
+import { IListarMovimentacoesService } from "../interfaces/listar-movimentacoes.interface";
 import {
   IMovimentacaoService,
   MOVIMENTACAO_SERVICE_INTERFACE,
-} from "../../../domain/conta/interfaces/movimentacao-service.interface.js";
-import { IListaPaginada } from "../../base/interfaces/lista-paginada.interface.js";
+} from "../../../domain/conta/interfaces/movimentacao-service.interface";
+import { IListaPaginada } from "../../base/interfaces/lista-paginada.interface";
 
 @injectable()
 export class ListarMovimentacoesService implements IListarMovimentacoesService {
