@@ -1,7 +1,7 @@
 import express from "express";
 
-import authRoute from "./web/auth.route.js";
-import indexRoute from "./web/index.route.js";
+import authRoute from "./web/auth.route";
+import indexRoute from "./web/index.route";
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import { container } from "tsyringe";
-import { CADASTRAR_MOVIMENTACAO_SERVICE_INTERFACE } from "./interfaces/cadastrar-movimentacao.interface.js";
-import { CadastrarMovimentacaoService } from "./services/cadastrar-movimentacao.service.js";
+import { CADASTRAR_MOVIMENTACAO_SERVICE_INTERFACE } from "./interfaces/cadastrar-movimentacao.interface";
+import { CadastrarMovimentacaoService } from "./services/cadastrar-movimentacao.service";
 
 export class MovimentacaoModule {
   static registerDependencies(dataSource: DataSource) {

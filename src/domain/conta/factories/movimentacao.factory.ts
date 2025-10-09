@@ -1,5 +1,5 @@
-import { MovimentacaoEntity } from "../../../infrastructure/database/entities/movimentacao.entity.js";
-import { Movimentacao } from "../entities/movimentacao.js";
+import { MovimentacaoEntity } from "../../../infrastructure/database/entities/movimentacao.entity";
+import { Movimentacao } from "../entities/movimentacao";
 
 export class MovimentacaoFactory {
   static create(

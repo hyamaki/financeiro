@@ -1,13 +1,13 @@
 import { inject, injectable } from "tsyringe";
 import { GoogleGenAI } from "@google/genai";
-import { ICadastrarMovimentacaoService } from "../interfaces/cadastrar-movimentacao.interface.js";
+import { ICadastrarMovimentacaoService } from "../interfaces/cadastrar-movimentacao.interface";
 import {
   IMovimentacaoService,
   MOVIMENTACAO_SERVICE_INTERFACE,
-} from "../../../../domain/conta/interfaces/movimentacao-service.interface.js";
-import { CadastrarMovimentacaoDTO } from "../dto/cadastrar-movimentacao.dto.js";
+} from "../../../../domain/conta/interfaces/movimentacao-service.interface";
+import { CadastrarMovimentacaoDTO } from "../dto/cadastrar-movimentacao.dto";
 import { ca } from "zod/locales";
-import { Movimentacao } from "../../../../domain/conta/entities/movimentacao.js";
+import { Movimentacao } from "../../../../domain/conta/entities/movimentacao";
 
 @injectable()
 export class CadastrarMovimentacaoService

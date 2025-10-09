@@ -1,4 +1,4 @@
-import { Base } from "../entities/base.js";
+import { Base } from "../entities/base";
 
 export const BASE_SERVICE_INTERFACE = Symbol("BASE_SERVICE_INTERFACE");
 export interface IBaseService<T extends Base> {

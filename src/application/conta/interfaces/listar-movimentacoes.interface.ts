@@ -1,4 +1,4 @@
-import { IListaPaginada } from "../../base/interfaces/lista-paginada.interface.js";
+import { IListaPaginada } from "../../base/interfaces/lista-paginada.interface";
 
 export const LISTAR_MOVIMENTACOES_SERVICE_INTERFACE = Symbol(
   "LISTAR_MOVIMENTACOES_SERVICE_INTERFACE"

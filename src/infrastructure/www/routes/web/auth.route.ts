@@ -1,6 +1,6 @@
 import express from "express";
 import { container } from "tsyringe";
-import { AuthController } from "../../controllers/auth.controller.js";
+import { AuthController } from "../../controllers/auth.controller";
 
 const controller = (): AuthController => {
   return container.resolve(AuthController);

@@ -5,25 +5,27 @@ import bodyParser from "body-parser";
 import dotenv from "dotenv";
 import openid from "express-openid-connect";
 
-import datasource from "./infrastructure/database/datasource.js";
-import webRoutes from "./infrastructure/www/routes/web.route.js";
-import { utils } from "./infrastructure/www/utils/index.js";
-import { BaseModule } from "./domain/base/base.module.js";
-import { ContaModule } from "./domain/conta/conta.module.js";
-import { MovimentacaoModule } from "./application/conta/movimentacao/movimentacao.application.js";
+import datasource from "./infrastructure/database/datasource";
+import webRoutes from "./infrastructure/www/routes/web.route";
+import { utils } from "./infrastructure/www/utils/index";
+import { BaseModule } from "./domain/base/base.module";
+import { ContaModule } from "./domain/conta/conta.module";
+import { MovimentacaoModule } from "./application/conta/movimentacao/movimentacao.application";
 
 dotenv.config({ path: ".env", quiet: true });
-datasource
-  .initialize()
-  .then(() => {
-    console.log("Data Source has been initialized!");
-    BaseModule.registerDependencies(datasource);
-    MovimentacaoModule.registerDependencies(datasource);
-    ContaModule.registerDependencies(datasource);
-  })
-  .catch((err: any) => {
-    console.error("Error during Data Source initialization:", err);
-  });
+if (process.env.NODE_ENV !== "test") {
+  datasource
+    .initialize()
+    .then(() => {
+      console.log("Data Source has been initialized!");
+      BaseModule.registerDependencies(datasource);
+      MovimentacaoModule.registerDependencies(datasource);
+      ContaModule.registerDependencies(datasource);
+    })
+    .catch((err: any) => {
+      console.error("Error during Data Source initialization:", err);
+    });
+}
 
 const app: Express = express();
 
@@ -41,8 +43,6 @@ app.set("views", path.join(__dirname, "infrastructure/www/views"));
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.locals = utils;
 
-app.use("/", webRoutes);
-
 /// POC auth0
 const config = {
   authRequired: false,
@@ -53,6 +53,8 @@ const config = {
   secret: "65Y5xFtw0qczIUZtfL6XFtPt_XPpSmqDtxZFLufGndUA211JrOcapWINXRaCpeha",
 };
 app.use(openid.auth(config));
+
+app.use("/", webRoutes);
 // req.oidc.isAuthenticated is provided from the auth router
 app.get("/auth", (req, res) => {
   res.send(req.oidc.isAuthenticated() ? "Logged in" : "Logged out");

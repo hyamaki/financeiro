@@ -1,4 +1,4 @@
-import { Base } from "../entities/base.js";
+import { Base } from "../entities/base";
 
 export interface IBaseRepository<T extends Base> {
   _salvar(entidade: T): Promise<T>;

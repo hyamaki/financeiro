@@ -1,7 +1,7 @@
 import { DataSource } from "typeorm";
 import { container } from "tsyringe";
-import { BASE_SERVICE_INTERFACE } from "./interfaces/base-service.interface.js";
-import { BaseService } from "./services/base.service.js";
+import { BASE_SERVICE_INTERFACE } from "./interfaces/base-service.interface";
+import { BaseService } from "./services/base.service";
 
 export class BaseModule {
   static registerDependencies(dataSource: DataSource) {

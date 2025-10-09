@@ -1,6 +1,6 @@
-import { Base } from "../entities/base.js";
-import { IBaseRepository } from "../interfaces/base-repository.interface.js";
-import { IBaseService } from "../interfaces/base-service.interface.js";
+import { Base } from "../entities/base";
+import { IBaseRepository } from "../interfaces/base-repository.interface";
+import { IBaseService } from "../interfaces/base-service.interface";
 
 export abstract class BaseService<T extends Base, R extends IBaseRepository<T>>
   implements IBaseService<T>

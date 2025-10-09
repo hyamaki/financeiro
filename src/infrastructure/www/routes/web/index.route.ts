@@ -1,6 +1,6 @@
 import express from "express";
 import { container } from "tsyringe";
-import { IndexController } from "../../controllers/index.controller.js";
+import { IndexController } from "../../controllers/index.controller";
 
 const controller = (): IndexController => {
   return container.resolve(IndexController);

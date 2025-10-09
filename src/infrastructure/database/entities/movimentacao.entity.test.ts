@@ -33,7 +33,7 @@ beforeEach(async () => {
 });
 
 describe("Movimentacao Entity Tests", () => {
-  it("should save a user to the in-memory database", async () => {
+  it("deve salvar uma nova movimentação no database in-memory", async () => {
     const movimentacaoRepository =
       AppDataSource.getRepository(MovimentacaoEntity);
     const novaMovimentacao = new MovimentacaoEntity();

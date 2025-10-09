@@ -1,4 +1,4 @@
-import { CadastrarMovimentacaoDTO } from "../dto/cadastrar-movimentacao.dto.js";
+import { CadastrarMovimentacaoDTO } from "../dto/cadastrar-movimentacao.dto";
 
 export const CADASTRAR_MOVIMENTACAO_SERVICE_INTERFACE = Symbol(
   "CADASTRAR_MOVIMENTACAO_SERVICE_INTERFACE"

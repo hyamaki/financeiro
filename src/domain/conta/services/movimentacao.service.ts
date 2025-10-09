@@ -1,11 +1,11 @@
 import { inject, injectable } from "tsyringe";
-import { BaseService } from "../../base/services/base.service.js";
-import { Movimentacao } from "../entities/movimentacao.js";
+import { BaseService } from "../../base/services/base.service";
+import { Movimentacao } from "../entities/movimentacao";
 import {
   IMovimentacaoRepository,
   MOVIMENTACAO_REPOSITORY_INTERFACE,
-} from "../repositories/movimentacao-repository.interface.js";
-import { IMovimentacaoService } from "../interfaces/movimentacao-service.interface.js";
+} from "../repositories/movimentacao-repository.interface";
+import { IMovimentacaoService } from "../interfaces/movimentacao-service.interface";
 
 @injectable()
 export class MovimentacaoService

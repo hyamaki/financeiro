@@ -3,12 +3,12 @@ import { inject, injectable } from "tsyringe";
 import {
   IListarMovimentacoesService,
   LISTAR_MOVIMENTACOES_SERVICE_INTERFACE,
-} from "../../../application/conta/interfaces/listar-movimentacoes.interface.js";
+} from "../../../application/conta/interfaces/listar-movimentacoes.interface";
 import {
   CADASTRAR_MOVIMENTACAO_SERVICE_INTERFACE,
   ICadastrarMovimentacaoService,
-} from "../../../application/conta/movimentacao/interfaces/cadastrar-movimentacao.interface.js";
-import { CadastrarMovimentacaoDTO } from "../../../application/conta/movimentacao/dto/cadastrar-movimentacao.dto.js";
+} from "../../../application/conta/movimentacao/interfaces/cadastrar-movimentacao.interface";
+import { CadastrarMovimentacaoDTO } from "../../../application/conta/movimentacao/dto/cadastrar-movimentacao.dto";
 
 @injectable()
 export class IndexController {
@@ -36,7 +36,7 @@ export class IndexController {
         movimentacoes: movimentacoes,
       });
     } catch (error) {
-      console.error('Error loading movimentacoes:', error);
+      console.error("Error loading movimentacoes:", error);
       next(error);
     }
   }
@@ -53,7 +53,7 @@ export class IndexController {
 
       res.redirect("/");
     } catch (error) {
-      console.error('Error creating movimentacao:', error);
+      console.error("Error creating movimentacao:", error);
       next(error);
     }
   }
