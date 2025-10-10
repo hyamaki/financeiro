@@ -1,5 +1,4 @@
 import request from "supertest";
-import { Request, Response, NextFunction } from "express";
 import app from "../../../application";
 
 describe("Bloqueio de Rota pelo Auth0", () => {

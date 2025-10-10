@@ -1,140 +1,159 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Financeiro</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>FinanceControl - Controle Financeiro Pessoal</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
   </head>
-  <body class="bg-gray-50 min-h-screen">
-    <div class="container mx-auto px-4 py-8">
-      <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">
-        Sistema Financeiro
-      </h1>
+  <body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold text-primary-500">FinanceControl</div>
+        <div class="space-x-4">
+          <a href="#" class="text-gray-600 hover:text-primary-500">Login</a>
+          <a href="#" class="bg-primary-500 text-white px-4 py-2 rounded-md hover:bg-dark">Teste Grátis</a>
+        </div>
+      </div>
+    </header>
 
-      <div class="bg-white rounded-lg shadow-md p-6 mb-8">
-        <h2 class="text-xl font-semibold text-gray-700 mb-4">
-          Adicionar Movimentação
-        </h2>
-        <form action="/" method="POST" class="space-y-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Descrição</label
-              >
-              <input
-                type="text"
-                name="descricao"
-                placeholder="Descrição da movimentação"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-primary-500 to-dark text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-5xl font-bold mb-6">Controle Total das Suas Finanças</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Organize seus gastos, acompanhe receitas e tome decisões financeiras inteligentes com nossa plataforma completa.</p>
+        <div class="space-x-4">
+          <a href="#" class="bg-white text-primary-500 px-8 py-3 rounded-md font-semibold hover:bg-gray-100">Começar Agora</a>
+          <a href="#" class="border border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-primary-500">Ver Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Recursos Poderosos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="text-center p-6">
+            <div class="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M4 4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 6a2 2 0 114 0 2 2 0 01-4 0zm8-2a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
             </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Valor</label
-              >
-              <input
-                type="number"
-                name="valor"
-                placeholder="0.00"
-                step="0.01"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                required
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Data</label
-              >
-              <input
-                type="date"
-                name="data"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
-            <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1"
-                >Tipo</label
-              >
-              <select
-                name="operacao"
-                class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="DESPESA">Despesa</option>
-                <option value="RECEITA">Receita</option>
-              </select>
-            </div>
+            <h3 class="text-xl font-semibold mb-2">Controle de Gastos</h3>
+            <p class="text-gray-600">Registre e categorize todas as suas despesas de forma simples e rápida.</p>
           </div>
-          <button
-            type="submit"
-            class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200"
-          >
-            Adicionar Movimentação
-          </button>
-        </form>
+          <div class="text-center p-6">
+            <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Relatórios Inteligentes</h3>
+            <p class="text-gray-600">Visualize seus dados financeiros com gráficos e relatórios detalhados.</p>
+          </div>
+          <div class="text-center p-6">
+            <div class="bg-teal bg-opacity-20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-teal" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold mb-2">Metas Financeiras</h3>
+            <p class="text-gray-600">Defina objetivos e acompanhe seu progresso rumo à independência financeira.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-200">
-          <h2 class="text-xl font-semibold text-gray-700">Movimentações</h2>
-        </div>
-        <div class="overflow-x-auto">
-          <table class="min-w-full divide-y divide-gray-200">
-            <thead class="bg-gray-50">
-              <tr>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                >
-                  Data
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                >
-                  Operação
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                >
-                  Descrição
-                </th>
-                <th
-                  class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase"
-                >
-                  Valor
-                </th>
-              </tr>
-            </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
-              <% movimentacoes.itens.forEach(function(item, index) { %>
-              <tr
-                class="<%= index % 2 === 0 ? 'bg-white' : 'bg-gray-50' %> hover:bg-gray-100"
-              >
-                <td class="px-6 py-4 text-sm text-gray-900">
-                  <%= formatar_data(item.data_operacao, 'dd/MM/yyyy HH:mm') %>
-                </td>
-                <td class="px-6 py-4">
-                  <span
-                    class="px-2 py-1 text-xs font-semibold rounded-full <%= item.operacao === 'RECEITA' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' %>"
-                  >
-                    <%= item.operacao %>
-                  </span>
-                </td>
-                <td class="px-6 py-4 text-sm text-gray-900">
-                  <%= item.descricao %>
-                </td>
-                <td
-                  class="px-6 py-4 text-sm font-medium <%= item.operacao === 'RECEITA' ? 'text-green-600' : 'text-red-600' %>"
-                >
-                  <%= item.operacao === 'RECEITA' ? '+' : '-' %>R$ <%=
-                  Math.abs(item.valor).toFixed(2) %>
-                </td>
-              </tr>
-              <% }); %>
-            </tbody>
-          </table>
+    <!-- Pricing Section -->
+    <section class="bg-gray-100 py-20">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Planos Simples e Transparentes</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white rounded-lg shadow-md p-8">
+            <h3 class="text-xl font-semibold mb-4">Básico</h3>
+            <div class="text-3xl font-bold mb-4">Grátis</div>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Até 50 transações/mês</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Relatórios básicos</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Suporte por email</li>
+            </ul>
+            <a href="#" class="w-full bg-gray-200 text-gray-800 py-2 px-4 rounded-md text-center block hover:bg-gray-300">Começar Grátis</a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-8 border-2 border-primary-500 relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-500 text-white px-4 py-1 rounded-full text-sm">Mais Popular</div>
+            <h3 class="text-xl font-semibold mb-4">Pro</h3>
+            <div class="text-3xl font-bold mb-4">R$ 19,90<span class="text-lg text-gray-600">/mês</span></div>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Transações ilimitadas</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Relatórios avançados</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Metas financeiras</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Suporte prioritário</li>
+            </ul>
+            <a href="#" class="w-full bg-primary-500 text-white py-2 px-4 rounded-md text-center block hover:bg-dark">Assinar Pro</a>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-8">
+            <h3 class="text-xl font-semibold mb-4">Premium</h3>
+            <div class="text-3xl font-bold mb-4">R$ 39,90<span class="text-lg text-gray-600">/mês</span></div>
+            <ul class="space-y-2 mb-8">
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Tudo do Pro</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Consultoria financeira</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>API personalizada</li>
+              <li class="flex items-center"><span class="text-green mr-2">✓</span>Suporte 24/7</li>
+            </ul>
+            <a href="#" class="w-full bg-teal text-white py-2 px-4 rounded-md text-center block hover:bg-dark">Assinar Premium</a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary-500 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-4">Pronto para Transformar Suas Finanças?</h2>
+        <p class="text-xl mb-8">Junte-se a milhares de usuários que já controlam melhor seu dinheiro.</p>
+        <a href="#" class="bg-white text-primary-500 px-8 py-3 rounded-md font-semibold hover:bg-gray-100">Começar Teste Grátis</a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <div class="text-xl font-bold mb-4">FinanceControl</div>
+            <p class="text-gray-400">Sua plataforma completa para controle financeiro pessoal.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Produto</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Recursos</a></li>
+              <li><a href="#" class="hover:text-white">Preços</a></li>
+              <li><a href="#" class="hover:text-white">Demo</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Suporte</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Central de Ajuda</a></li>
+              <li><a href="#" class="hover:text-white">Contato</a></li>
+              <li><a href="#" class="hover:text-white">Status</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Legal</h4>
+            <ul class="space-y-2 text-gray-400">
+              <li><a href="#" class="hover:text-white">Privacidade</a></li>
+              <li><a href="#" class="hover:text-white">Termos</a></li>
+              <li><a href="#" class="hover:text-white">Cookies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+          <p>&copy; 2024 FinanceControl. Todos os direitos reservados.</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
